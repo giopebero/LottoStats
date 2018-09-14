@@ -5,7 +5,7 @@ using MyStats.Core;
 
 namespace MyStats.Controllers
 {
-    [RoutePrefix("draws")]
+    [System.Web.Http.RoutePrefix("draws")]
     public class DrawsController : ApiController
     {
         private readonly Repository _repository;

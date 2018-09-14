@@ -11,11 +11,10 @@ namespace MyStats.Core
 {
     public class Importer
     {
-        public IEnumerable<Draw> ImportData(string filePath)
+        public IEnumerable<Draw> ImportData(string fileContent)
         {
-            var lines = File.ReadAllLines(filePath);
             var drawDictionary = new Dictionary<DateTime, Draw>();
-            foreach (var line in lines)
+            foreach (var line in fileContent.Split(new char[] {'\n' }, StringSplitOptions.RemoveEmptyEntries))
             {
                 var data = GetDrawData(line);
                 var drawDate = AddDraw(data, drawDictionary);

@@ -8,11 +8,11 @@ namespace MyStats.Controllers
     [RoutePrefix("import")]
     public class ImportController : ApiController
     {
-        [HttpPost, Route("")]
+        [System.Web.Mvc.HttpPost, Route("")]
         public IEnumerable<Draw> Import()
         {
             var importer = new Importer();
-            return importer.ImportData(ConfigurationManager.AppSettings["filePath"]);
+            return importer.ImportData(Properties.Resources.storico);
         }
     }
 }
